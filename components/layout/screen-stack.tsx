@@ -1,6 +1,5 @@
 import { Stack } from 'expo-router';
 
-import { screenHeaderShown } from '@/constants/data';
 import { useColorScheme } from '@/hooks/use-color-scheme';
 
 type Props = {
@@ -14,14 +13,14 @@ export const StackScreen = ({ options, children }: Props) => {
     <Stack
       screenOptions={{
         ...options,
-        headerStyle: {
-          backgroundColor: colorScheme === 'dark' ? '#000' : '#fff',
-        },
-        headerTitleStyle: {
-          color: colorScheme === 'dark' ? '#fff' : '#000',
-        },
-        headerShown: screenHeaderShown,
-        headerBackVisible: true,
+        // headerStyle: {
+        //   backgroundColor: colorScheme === 'dark' ? '#000' : '#fff',
+        // },
+        // headerTitleStyle: {
+        //   color: colorScheme === 'dark' ? '#fff' : '#000',
+        // },
+        // headerShown: screenHeaderShown,
+        // headerBackVisible: true,
       }}>
       {children}
     </Stack>

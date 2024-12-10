@@ -8,7 +8,6 @@ import React from 'react';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 import { useGetUserProfile } from '@/api/profile-api';
-import { StackScreen } from '@/components/layout/screen-stack';
 import { NAV_THEME } from '@/constants/colors';
 import { isweb } from '@/constants/data';
 import useAuthInit from '@/hooks/use-auth-init';
@@ -105,7 +104,7 @@ const MainApp = () => {
 
   return (
     <>
-      <StackScreen>
+      <Stack>
         <Stack.Screen
           name="(auth)"
           options={{
@@ -118,7 +117,7 @@ const MainApp = () => {
             headerShown: false,
           }}
         />
-      </StackScreen>
+      </Stack>
       <PortalHost />
     </>
   );

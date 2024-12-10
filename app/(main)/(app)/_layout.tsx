@@ -1,9 +1,8 @@
+import { Stack } from 'expo-router';
 import React from 'react';
 
-import { StackScreen } from '@/components/layout/screen-stack';
-
 const AppLayout = () => {
-  return <StackScreen />;
+  return <Stack />;
 };
 
 export default AppLayout;

@@ -8,6 +8,7 @@ import { ChatArea } from '@/components/messages/chat-area';
 import { MessageActions } from '@/components/messages/message-actions';
 import { P } from '@/components/ui/typography';
 import { isIOS, screenHeaderShown } from '@/constants/data';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const MessagesDetailsPage = () => {
   const { id } = useLocalSearchParams<{
@@ -42,7 +43,7 @@ const MessagesDetailsPage = () => {
   const canReply = data?.pages[0]?.canReply;
 
   return (
-    <View className="flex-1 bg-background">
+    <SafeAreaView className="flex-1 bg-background">
       <Stack.Screen
         options={{
           title: user?.name,
@@ -53,7 +54,7 @@ const MessagesDetailsPage = () => {
         className="flex-1 bg-background p-3"
         keyboardVerticalOffset={isIOS ? 80 : 0}
         behavior={isIOS ? 'padding' : 'height'}>
-        <View className="flex-1 pb-20">
+        <View className="flex-1 pb-2">
           <ChatArea
             isFetchingNextPage={isFetchingNextPage}
             messages={messages}
@@ -68,7 +69,7 @@ const MessagesDetailsPage = () => {
           <P className="text-center">You can't reply to this user</P>
         )}
       </KeyboardAvoidingView>
-    </View>
+    </SafeAreaView>
   );
 };
 

@@ -1,7 +1,6 @@
 import React from 'react';
 import { ActivityIndicator, View } from 'react-native';
 
-import { StackScreen } from '@/components/layout/screen-stack';
 import { useUser } from '@/hooks/use-user';
 import { useNotAuthenticated } from '@/hooks/useAuth';
 import { useLoading } from '@/providers/auth-provider';
@@ -13,12 +12,12 @@ const AuthLayout = () => {
 
   if (loading || (user && !user.profileDetails.shopAssistantPasswordExpired))
     return (
-      <View className="bg-background flex-1 items-center justify-center">
+      <View className="flex-1 items-center justify-center bg-background">
         <ActivityIndicator size="large" color="#0000ff" />
       </View>
     );
 
-  return <StackScreen />;
+  return <Stack />;
 };
 
 export default AuthLayout;

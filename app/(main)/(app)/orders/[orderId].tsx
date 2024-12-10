@@ -110,7 +110,7 @@ const OrderDetailScreen = () => {
         {canApproveAddressUpdate && (
           <UpdateAddressAlert
             isSellerRequest={order.updateAddressRequest?.sellerRequest}
-            orderId={Number(params.orderid)}
+            orderId={Number(params.orderId)}
           />
         )}
 
@@ -139,7 +139,7 @@ const OrderDetailScreen = () => {
                 <OrderChange
                   variant="secondary"
                   className="h-9"
-                  orderId={params.orderid as string}
+                  orderId={params.orderId as string}
                   progress={order.orderProgress}
                 />
               )}
